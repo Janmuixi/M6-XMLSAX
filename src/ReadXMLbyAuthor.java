@@ -44,7 +44,12 @@ class GestionContents extends DefaultHandler {
 	int contador = 0;
 	
 	public void endDocument(){
-		System.out.println(contador);
+		if (contador>0) {
+			System.out.println(contador);
+		}else {
+			System.out.println("No hay discos de este autor");
+		}
+		
 	}
 	public void startElement (String uri, String nombre, String nombreC, Attributes atts) {
 		if (nombre.equals("TITLE")) {
